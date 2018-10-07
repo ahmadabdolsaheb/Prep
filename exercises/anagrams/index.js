@@ -44,3 +44,11 @@ module.exports = anagrams;
 // function sortAndFilter(str){
 //   return str.split('').filter(x => x.match(/\w/)).sort().toString();
 // }
+
+
+// let buildCharMap = str => {
+//   return str.replace(/[^\w]/g, '').toLowerCase().split('').reduce((acc, item, i, arr) => {
+//     acc[item] = acc[item] + 1 || 1;
+//     return acc;
+//   }, {})
+// }
