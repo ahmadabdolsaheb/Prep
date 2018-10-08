@@ -13,7 +13,61 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
+function pyramid(n, row = 0, level = '') {
+  if (row === n) {
+    return;
+  }
 
-function pyramid(n) {}
+  if (level.length === 2 * n - 1){
+    console.log(level);
+    return pyramid(n, row + 1);
+  }
+
+  const midpoint = Math.floor((2 * n - 1) / 2);
+  let add;
+   if(midpoint - row <= level.length && midpoint + row >= level.length) add = '#';
+   else add = ' ';
+
+   pyramid(n, row, level + add);
+}
+
 
 module.exports = pyramid;
+
+// function pyramid(num) {
+//   let base = (2 * num) - 1;
+//   let counter = 1;
+//   while(counter <= base){
+//     let sides = (base - counter) / 2;
+//     console.log((" ").repeat(sides) + ("#").repeat(counter) + (" ").repeat(sides));
+//     counter = counter + 2;
+//   }
+// }
+
+
+// function pyramid(n) {
+//   const midpoint = Math.floor((2 * n - 1) / 2);
+//   for( let row = 0; row < n; row++){
+//     let level = '';
+//     for (let column = 0; column < 2 * n - 1; column++){
+//       if(midpoint - row <= column && midpoint + row >= column){
+//         level += "#";
+//       } else {
+//         level += " ";
+//       }
+//     }
+//     console.log(level);
+//   }
+// }
+
+
+// function pyramid(n, blkNum = 1) {
+//   let base = 2 * n - 1;
+//   if( blkNum > base){
+//     return;
+//   }
+//
+//   let sides = (base - blkNum) / 2;
+//   console.log((' ').repeat(sides) + ('#').repeat(blkNum) + (' ').repeat(sides))
+//   return pyramid(n, blkNum + 2);
+// }
