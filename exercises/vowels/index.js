@@ -8,7 +8,7 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-  const matches = str.match(/[iaoue]/gi)
+  const matches = str.match(/[iaoue]/gi);
   return matches ? matches.length : 0;
 }
 
